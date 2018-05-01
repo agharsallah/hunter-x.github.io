@@ -1,0 +1,68 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="./flipclock.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-float.min.css" />
+	<link rel="stylesheet" href="./counter.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="./flipclock.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container hinge-nav">
+		<header class="header waypoint " id="download">
+
+			<h1>
+				<a href="https://foundation.mozilla.org/opportunity/global-sprint/">Mozilla Global Sprint</a>
+				<span class="version">It's going to be fun !! </span>
+			</h1>
+			<div id="outer" style="width:100%">
+				<div style="width:auto!important" class="clock innercenter"></div>
+				<div class="message innercenter">Time to Hack !</div>
+			</div>
+
+			<div class="buttons">
+				<a href="https://ti.to/Mozilla/global-sprint-tunis18" target="_" class="grand-button hide-for-small">
+					<i class="icon-download"></i> Get your ticket for Tunis site ! </a>
+			</div>
+			<h6>
+				<span class="builtWith">built with FlipClock </span>
+			</h6>
+
+		</header>
+
+
+		<script type="text/javascript">
+			var clock;
+
+			$(document).ready(function () {
+				// Grab the current date
+				var currentDate = new Date();
+				console.log(currentDate);
+				// Set some date in the future. In this case, it's always Jan 1
+				var futureDate = new Date("May 10 2018 09:00:00");
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+				});
+
+			});
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48338800-2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+
+			gtag('config', 'UA-48338800-2');
+		</script>
+
+	</div>
+</body>
+
+</html>
